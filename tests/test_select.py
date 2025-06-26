@@ -22,3 +22,10 @@ def test_select_product_2():
     main_page = Main(driver)
     main_page.select_product_go_cart()
     driver.quit()
+
+
+def test_select_product_3():
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+    main_page = Main(driver)
+    main_page.select_product_go_cart()
+    driver.quit()
