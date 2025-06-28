@@ -1,6 +1,8 @@
+import allure
 from selenium.webdriver.common.by import By
 
 from base.base import Base
+from utilities.logger import Logger
 
 
 class Login(Base):
@@ -51,10 +53,13 @@ class Login(Base):
     # methods
 
     def authorize(self, email_text, password_text):
-        self.driver.get(self.LOGIN_PAGE)
-        self.driver.maximize_window()
-        self.assert_word(self.get_authorization_word(), self.AUTHORIZATION_WORD, self.FILE_NAME)
-        self.assert_url(self.PAGE_URL, self.FILE_NAME)
-        self.fill_email_input(email_text)
-        self.fill_password_input(password_text)
-        self.click_login_button()
+        with allure.step('authorize'):
+            Logger().add_start_step('authorize')
+            self.driver.get(self.LOGIN_PAGE)
+            self.driver.maximize_window()
+            self.assert_word(self.get_authorization_word(), self.AUTHORIZATION_WORD, self.FILE_NAME)
+            self.assert_url(self.PAGE_URL, self.FILE_NAME)
+            self.fill_email_input(email_text)
+            self.fill_password_input(password_text)
+            self.click_login_button()
+            Logger().add_end_step(self.driver.current_url, 'authorize')
