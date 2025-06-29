@@ -1,0 +1,32 @@
+
+-----
+Test: test_select.py::test_buy_product (call)
+Start time: 2025-06-29 17:12:42.077013
+Start name method: authorize
+
+End time: 2025-06-29 17:12:43.614249
+End name method: authorize
+URL: https://sendflowers.by/my-account
+-----
+
+-----
+Test: test_select.py::test_buy_product (call)
+Start time: 2025-06-29 17:12:43.614771
+Start name method: select_product_go_cart
+
+
+-----
+Test: test_select.py::test_buy_product_2 (call)
+Start time: 2025-06-29 17:12:49.334055
+Start name method: authorize
+
+End time: 2025-06-29 17:12:50.465097
+End name method: authorize
+URL: https://sendflowers.by/login
+-----
+
+-----
+Test: test_select.py::test_buy_product_2 (call)
+Start time: 2025-06-29 17:12:50.466133
+Start name method: select_product_go_cart
+

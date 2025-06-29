@@ -11,7 +11,8 @@ def test_buy_product(driver):
     login_page = Login(driver)
     login_page.authorize(email, password)
     main_page = Main(driver)
-    main_page.select_product_go_cart()
+    price, desk = main_page.select_one_product('Брест', 7)
+    print(price, desk)
 
 
 @allure.description('test_buy_product_2')
@@ -21,4 +22,5 @@ def test_buy_product_2(driver):
     login_page = Login(driver)
     login_page.authorize(email, password)
     main_page = Main(driver)
-    main_page.select_product_go_cart()
+    price, desk = main_page.select_one_product('Минск', 16)
+    print(price, desk)
