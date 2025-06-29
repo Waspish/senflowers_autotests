@@ -1,0 +1,8 @@
+Good value word
+Good value URL
+Email filled
+Password filled
+Login button clicked
+Good value word
+Good value URL
+Cart clicked

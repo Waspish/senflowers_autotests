@@ -7,8 +7,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 options = ChromeOptions()
 options.add_argument('--incognito')
 options.add_argument('--guest')
-options.add_argument('--headless')
 
+
+# options.add_argument('--headless')
 
 @pytest.fixture(scope='function')
 def driver():
