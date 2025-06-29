@@ -58,18 +58,10 @@ class Main(Base):
         return self.wait(By.XPATH, self.main_word)
 
     # actions
-    def click_approve_button(self):
-        self.get_approve_button().click()
-        print(f'Approve button clicked')
 
     def click_logo(self):
         self.get_logo().click()
         print(f'Logo clicked')
-
-    def select_city_dropdown(self, city_name):
-        select = self.get_city_dropdown()
-        select.select_by_visible_text(city_name)
-        print(f'City {city_name} selected from dropdown')
 
     def click_product(self):
         self.ACTION.move_to_element(self.get_product()).click().perform()
@@ -81,7 +73,7 @@ class Main(Base):
 
     # methods
 
-    def select_one_product(self, city_name, product_number):
+    def select_one_product(self, product_number):
         with allure.step('select_one_product'):
             Logger().add_start_step('select_product_go_cart')
 
@@ -93,10 +85,11 @@ class Main(Base):
 
             self.click_logo()
             self.product += f'[{product_number}]'
+            product_price_text = self.get_product_price().text
+            product_desc_text = self.get_product_desc().text
+
             self.click_product()
-            self.select_city_dropdown(city_name)
-            self.click_approve_button()
 
             Logger().add_end_step(self.driver.current_url, 'select_product_go_cart')
 
-            return self.get_product_price().text, self.get_product_desc().text
+            return product_price_text, product_desc_text
